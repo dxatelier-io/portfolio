@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Sacramento&display=swap');
 
 * {
   margin: 0;
@@ -8,10 +8,10 @@
 
 body {
   font-family: 'Quicksand', sans-serif;
-  background: linear-gradient(120deg, #ffb6d5, #c6a8f7, #ffd6e8);
+  background: linear-gradient(120deg, #ffe6f0, #ffd8cc, #fff5f7);
   background-size: 400% 400%;
   animation: gradientShift 15s ease infinite;
-  color: #333;
+  color: #444;
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
@@ -58,9 +58,10 @@ header {
 }
 
 .logo {
-  font-family: 'Pacifico', cursive;
-  font-size: 1.5rem;
-  color: #6a1b9a;
+  font-family: 'Sacramento', cursive;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #d46a6a; /* rose gold / coral vibe */
 }
 
 nav ul {
@@ -70,7 +71,7 @@ nav ul {
 }
 nav ul li a {
   text-decoration: none;
-  color: #333;
+  color: #444;
   font-weight: 600;
   position: relative;
 }
@@ -83,7 +84,7 @@ nav ul li a::after {
 }
 nav ul li a:hover::after {
   opacity: 1;
-  color: #ff69b4;
+  color: #ff7aa2;
 }
 
 /* Hero */
@@ -93,7 +94,7 @@ nav ul li a:hover::after {
 }
 .hero h1 {
   font-size: 2.5rem;
-  color: #4a148c;
+  color: #b84d67;
   margin-bottom: 15px;
 }
 .hero p {
@@ -101,18 +102,18 @@ nav ul li a:hover::after {
   margin-bottom: 25px;
 }
 .cta {
-  background: #ff69b4;
+  background: #ff7aa2;
   color: white;
   border: none;
   padding: 12px 24px;
   border-radius: 30px;
   font-size: 1rem;
   cursor: pointer;
-  transition: transform 0.3s;
+  transition: transform 0.3s, background 0.3s;
 }
 .cta:hover {
   transform: scale(1.1);
-  background: #ec407a;
+  background: #e95b8b;
 }
 
 /* Footer */
