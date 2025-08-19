@@ -1,37 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DX Atelier</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DX Atelier ✦ Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Animated background -->
+  <div class="background">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+  </div>
+
+  <!-- Navbar -->
   <header>
     <div class="logo">Δ DX Atelier</div>
     <nav>
-      <a href="about.html">About</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="library.html">Library</a>
-      <a href="game.html">Game</a>
-      <a href="contact.html">Contact</a>
-      <a href="social.html">Social Media</a>
+      <ul>
+        <li><a href="about.html" data-key="about">About</a></li>
+        <li><a href="contact.html" data-key="contact">Contact</a></li>
+        <li><a href="portfolio.html" data-key="portfolio">Portfolio</a></li>
+        <li><a href="social.html" data-key="social">Social Media</a></li>
+        <li><a href="game.html" data-key="game">Game</a></li>
+        <li><a href="library.html" data-key="library">Library</a></li>
+      </ul>
     </nav>
+    <div class="lang-switch">
+      <select id="language">
+        <option value="en">English</option>
+        <option value="id">Indonesia</option>
+        <option value="fr">Français</option>
+      </select>
+    </div>
   </header>
 
+  <!-- Hero Section -->
   <section class="hero">
-    <h1>Welcome to DX Atelier</h1>
-    <p>Modern, girly & interactive portfolio of a Web Designer</p>
-    <a href="booking.html" class="cta">Book Me Now</a>
+    <h1 data-key="welcome">Welcome to DX Atelier ✦</h1>
+    <p data-key="tagline">A playful & modern portfolio by Δ</p>
+    <button class="cta" onclick="location.href='booking.html'" data-key="booknow">💖 Book Me Now 💖</button>
   </section>
 
+  <!-- Footer -->
   <footer>
     <p>© 2025 DX Atelier Δ | All Rights Reserved</p>
-    <div class="language-switcher">
-      <a href="?lang=id">Indonesia</a> |
-      <a href="?lang=en">English</a> |
-      <a href="?lang=fr">Français</a>
-    </div>
   </footer>
 
   <script src="script.js"></script>
