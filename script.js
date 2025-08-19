@@ -1,30 +1,43 @@
-// Animasi interaktif kecil (misalnya floating hearts pas hover tombol)
-document.addEventListener("DOMContentLoaded", () => {
-  const cta = document.querySelector(".cta");
-  cta.addEventListener("mouseenter", () => {
-    let heart = document.createElement("span");
-    heart.textContent = "💖";
-    heart.classList.add("floating-heart");
-    cta.appendChild(heart);
+const translations = {
+  en: {
+    about: "About",
+    contact: "Contact",
+    portfolio: "Portfolio",
+    social: "Social Media",
+    game: "Game",
+    library: "Library",
+    welcome: "Welcome to DX Atelier ✦",
+    tagline: "A playful & modern portfolio by Δ",
+    booknow: "💖 Book Me Now 💖"
+  },
+  id: {
+    about: "Tentang",
+    contact: "Kontak",
+    portfolio: "Portofolio",
+    social: "Media Sosial",
+    game: "Permainan",
+    library: "Perpustakaan",
+    welcome: "Selamat Datang di DX Atelier ✦",
+    tagline: "Portofolio modern & ceria oleh Δ",
+    booknow: "💖 Pesan Sekarang 💖"
+  },
+  fr: {
+    about: "À propos",
+    contact: "Contact",
+    portfolio: "Portfolio",
+    social: "Réseaux Sociaux",
+    game: "Jeu",
+    library: "Bibliothèque",
+    welcome: "Bienvenue chez DX Atelier ✦",
+    tagline: "Un portfolio moderne et ludique par Δ",
+    booknow: "💖 Réservez Maintenant 💖"
+  }
+};
 
-    setTimeout(() => {
-      heart.remove();
-    }, 1000);
+document.getElementById("language").addEventListener("change", (e) => {
+  const lang = e.target.value;
+  document.querySelectorAll("[data-key]").forEach(el => {
+    const key = el.getAttribute("data-key");
+    el.textContent = translations[lang][key];
   });
 });
-
-// CSS tambahan untuk heart (inject ke style.css atau tambahin via JS)
-const style = document.createElement('style');
-style.textContent = `
-.floating-heart {
-  position: absolute;
-  animation: floatUp 1s ease forwards;
-  margin-left: 10px;
-}
-
-@keyframes floatUp {
-  from { transform: translateY(0); opacity: 1; }
-  to { transform: translateY(-40px); opacity: 0; }
-}
-`;
-document.head.appendChild(style);
