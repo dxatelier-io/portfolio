@@ -1,140 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DX Atelier</title>
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to right, #ffe0f0, #fff0f6);
-      color: #333;
-      text-align: center;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 30px;
-      background: #fff;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    nav a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: #555;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-    nav a:hover {
-      color: #e75480;
-    }
-    .lang-switcher {
-      cursor: pointer;
-      font-size: 18px;
-    }
-    .hero {
-      padding: 100px 20px;
-    }
-    .hero h1 {
-      font-size: 40px;
-      color: #e75480;
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 25px;
-      background: #e75480;
-      color: white;
-      border-radius: 30px;
-      text-decoration: none;
-      transition: background 0.3s;
-    }
-    .btn:hover {
-      background: #ff6b9e;
-    }
-    footer {
-      padding: 20px;
-      background: #fff;
-      margin-top: 50px;
-      font-size: 14px;
-      color: #777;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DX Atelier ✦ Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Animated background -->
+  <div class="background">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+  </div>
+
+  <!-- Navbar -->
   <header>
     <div class="logo">Δ DX Atelier</div>
     <nav>
-      <a href="#" data-translate="about">About</a>
-      <a href="#" data-translate="portfolio">Portfolio</a>
-      <a href="booking.html" data-translate="booking">Booking</a>
-      <a href="#" data-translate="contact">Contact</a>
-      <a href="#" data-translate="library">Library</a>
-      <a href="#" data-translate="game">Game</a>
+      <ul>
+        <li><a href="about.html" data-key="about">About</a></li>
+        <li><a href="contact.html" data-key="contact">Contact</a></li>
+        <li><a href="portfolio.html" data-key="portfolio">Portfolio</a></li>
+        <li><a href="social.html" data-key="social">Social Media</a></li>
+        <li><a href="game.html" data-key="game">Game</a></li>
+        <li><a href="library.html" data-key="library">Library</a></li>
+      </ul>
     </nav>
-    <div class="lang-switcher">
-      <span onclick="changeLang('id')">🇮🇩</span> | 
-      <span onclick="changeLang('en')">🇬🇧</span> | 
-      <span onclick="changeLang('fr')">🇫🇷</span>
+    <div class="lang-switch">
+      <select id="language">
+        <option value="en">English</option>
+        <option value="id">Indonesia</option>
+        <option value="fr">Français</option>
+      </select>
     </div>
   </header>
 
+  <!-- Hero Section -->
   <section class="hero">
-    <h1 data-translate="welcome">Welcome to DX Atelier</h1>
-    <p data-translate="subtitle">Creative web designer portfolio with a girly and modern touch ✨</p>
-    <a href="booking.html" class="btn" data-translate="bookMe">Book Me Now</a>
+    <h1 data-key="welcome">Welcome to DX Atelier ✦</h1>
+    <p data-key="tagline">A playful & modern portfolio by Δ</p>
+    <button class="cta" onclick="location.href='booking.html'" data-key="booknow">💖 Book Me Now 💖</button>
   </section>
 
+  <!-- Footer -->
   <footer>
-    <p>© 2025 DX Atelier. All rights reserved.</p>
+    <p>© 2025 DX Atelier Δ | All Rights Reserved</p>
   </footer>
 
-  <script>
-    const translations = {
-      "id": {
-        "about": "Tentang",
-        "portfolio": "Portofolio",
-        "booking": "Booking",
-        "contact": "Kontak",
-        "library": "Perpustakaan",
-        "game": "Game",
-        "welcome": "Selamat Datang di DX Atelier",
-        "subtitle": "Portofolio web desainer dengan sentuhan girly dan modern ✨",
-        "bookMe": "Booking Sekarang"
-      },
-      "en": {
-        "about": "About",
-        "portfolio": "Portfolio",
-        "booking": "Booking",
-        "contact": "Contact",
-        "library": "Library",
-        "game": "Game",
-        "welcome": "Welcome to DX Atelier",
-        "subtitle": "Creative web designer portfolio with a girly and modern touch ✨",
-        "bookMe": "Book Me Now"
-      },
-      "fr": {
-        "about": "À propos",
-        "portfolio": "Portfolio",
-        "booking": "Réserver",
-        "contact": "Contact",
-        "library": "Bibliothèque",
-        "game": "Jeu",
-        "welcome": "Bienvenue chez DX Atelier",
-        "subtitle": "Portfolio de web designer créatif avec une touche girly et moderne ✨",
-        "bookMe": "Réservez maintenant"
-      }
-    };
-
-    function changeLang(lang) {
-      document.querySelectorAll("[data-translate]").forEach(el => {
-        let key = el.getAttribute("data-translate");
-        el.textContent = translations[lang][key];
-      });
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
