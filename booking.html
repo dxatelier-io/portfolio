@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking | DX Atelier</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .booking-container {
+      max-width: 600px;
+      margin: 100px auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 1.5rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      animation: fadeInUp 1s ease;
+    }
+
+    .booking-container h2 {
+      font-family: 'Sacramento', cursive;
+      font-size: 2.5rem;
+      color: #d46a6a;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .booking-container form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .booking-container input,
+    .booking-container select,
+    .booking-container textarea {
+      padding: 0.8rem 1rem;
+      border-radius: 1rem;
+      border: 1px solid #f1c5c5;
+      font-family: 'Quicksand', sans-serif;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .booking-container input:focus,
+    .booking-container select:focus,
+    .booking-container textarea:focus {
+      border-color: #d46a6a;
+      box-shadow: 0 0 8px rgba(212,106,106,0.3);
+      outline: none;
+    }
+
+    .booking-container button {
+      background: linear-gradient(120deg, #f6b1c3, #fcd5ce);
+      border: none;
+      padding: 0.8rem;
+      border-radius: 1rem;
+      font-size: 1rem;
+      font-weight: bold;
+      font-family: 'Quicksand', sans-serif;
+      color: #fff;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .booking-container button:hover {
+      transform: scale(1.05);
+      background: linear-gradient(120deg, #fcd5ce, #f6b1c3);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        transform: translateY(40px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Δ DX Atelier</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="library.html">Library</a>
+      <a href="game.html">Game</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="booking-container">
+      <h2>Book Me Now 💌</h2>
+      <form>
+        <input type="text" placeholder="Your Full Name" required>
+        <input type="email" placeholder="Your Email Address" required>
+        <select required>
+          <option value="">Select Service</option>
+          <option value="web">Web Design</option>
+          <option value="uiux">UI/UX Consulting</option>
+          <option value="branding">Branding & Logo</option>
+          <option value="other">Other</option>
+        </select>
+        <input type="date" required>
+        <textarea rows="5" placeholder="Tell me about your project..." required></textarea>
+        <button type="submit">Submit Booking</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 DX Atelier Δ | All rights reserved.</p>
+    <div class="lang-switch">
+      <a href="#">🇮🇩 ID</a> | <a href="#">🇬🇧 EN</a> | <a href="#">🇫🇷 FR</a>
+    </div>
+  </footer>
+</body>
+</html>
