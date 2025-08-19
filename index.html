@@ -1,54 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DX Atelier ✦ Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <!-- Styles will be provided in assets/style.css next -->
+  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Sacramento&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Animated background -->
-  <div class="background">
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
+  <!-- Decorative animated background (CSS only; styles in style.css) -->
+  <div class="bg-anim" aria-hidden="true">
+    <span class="bubble"></span>
+    <span class="bubble"></span>
+    <span class="bubble"></span>
+    <span class="bubble"></span>
+    <span class="bubble"></span>
   </div>
 
-  <!-- Navbar -->
-  <header>
-    <div class="logo">Δ DX Atelier</div>
-    <nav>
-      <ul>
-        <li><a href="about.html" data-key="about">About</a></li>
-        <li><a href="contact.html" data-key="contact">Contact</a></li>
-        <li><a href="portfolio.html" data-key="portfolio">Portfolio</a></li>
-        <li><a href="social.html" data-key="social">Social Media</a></li>
-        <li><a href="game.html" data-key="game">Game</a></li>
-        <li><a href="library.html" data-key="library">Library</a></li>
-      </ul>
+  <!-- Header / Navbar -->
+  <header class="site-header">
+    <a href="index.html" class="brand" aria-label="DX Atelier Home">
+      <span class="logo">Δ</span>
+      <span class="brand-text">DX Atelier</span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <a href="about.html" data-i18n="nav.about">About</a>
+      <a href="portfolio.html" data-i18n="nav.portfolio">Portfolio</a>
+      <a href="library.html" data-i18n="nav.library">Library</a>
+      <a href="game.html" data-i18n="nav.game">Game</a>
+      <a href="contact.html" data-i18n="nav.contact">Contact</a>
+      <a href="social.html" data-i18n="nav.social">Social Media</a>
     </nav>
-    <div class="lang-switch">
-      <select id="language">
-        <option value="en">English</option>
-        <option value="id">Indonesia</option>
-        <option value="fr">Français</option>
-      </select>
+
+    <!-- Language Switcher (persists via localStorage in script.js) -->
+    <div class="lang-switch" aria-label="Language switcher">
+      <button type="button" class="lang-btn" data-lang="id" aria-pressed="false">🇮🇩 ID</button>
+      <button type="button" class="lang-btn" data-lang="en" aria-pressed="true">🇬🇧 EN</button>
+      <button type="button" class="lang-btn" data-lang="fr" aria-pressed="false">🇫🇷 FR</button>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1 data-key="welcome">Welcome to DX Atelier ✦</h1>
-    <p data-key="tagline">A playful & modern portfolio by Δ</p>
-    <button class="cta" onclick="location.href='booking.html'" data-key="booknow">💖 Book Me Now 💖</button>
-  </section>
+  <!-- Hero -->
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title" data-i18n="hero.title">Welcome to DX Atelier</h1>
+      <p class="tagline" data-i18n="hero.tagline">Modern, girly & interactive portfolio of a Web Designer</p>
+      <a class="cta" href="booking.html" data-i18n="hero.cta">Book Me Now</a>
+
+      <!-- Cute inline sparkles created with CSS only -->
+      <div class="sparkles" aria-hidden="true">
+        <i></i><i></i><i></i><i></i><i></i>
+      </div>
+    </section>
+  </main>
 
   <!-- Footer -->
-  <footer>
-    <p>© 2025 DX Atelier Δ | All Rights Reserved</p>
+  <footer class="site-footer">
+    <small>© 2025 DX Atelier Δ · <span data-i18n="footer.rights">All Rights Reserved</span></small>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- i18n + interactions will be added by assets/script.js next -->
+  <noscript>
+    <p style="text-align:center;padding:1rem">Please enable JavaScript to use the language feature.</p>
+  </noscript>
+  <script src="assets/script.js" defer></script>
 </body>
 </html>
