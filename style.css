@@ -1,202 +1,98 @@
-/* assets/style.css */
-
-/* Import Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Sacramento&display=swap');
-
-/* Warna utama pastel */
-:root {
-  --bg-gradient: linear-gradient(135deg, #ffe6f0, #fceeff, #e6f7ff);
-  --color-accent: #ff85c0;
-  --color-accent-2: #b37feb;
-  --color-dark: #3d3d3d;
-  --color-light: #ffffff;
-  --glass: rgba(255, 255, 255, 0.5);
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 body {
   font-family: 'Quicksand', sans-serif;
-  background: var(--bg-gradient);
-  background-attachment: fixed;
-  color: var(--color-dark);
-  line-height: 1.6;
-  overflow-x: hidden;
+  background: linear-gradient(120deg, #ffe6f0, #ffd8cc, #fff5f7);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  color: #444;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* ===== HEADER ===== */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  backdrop-filter: blur(12px);
-  background: var(--glass);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  border-radius: 0 0 20px 20px;
+  padding: 20px 40px;
 }
 
-header .logo {
+.logo {
   font-family: 'Sacramento', cursive;
   font-size: 2.2rem;
-  color: var(--color-accent);
-  font-weight: bold;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: var(--color-dark);
   font-weight: 600;
-  position: relative;
-  transition: color 0.3s ease;
+  color: #d46a6a; /* rose pink */
 }
 
-nav ul li a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0;
-  height: 3px;
-  background: var(--color-accent);
-  transition: width 0.3s ease;
-  border-radius: 4px;
+nav a {
+  margin: 0 12px;
+  text-decoration: none;
+  color: #444;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
-nav ul li a:hover {
-  color: var(--color-accent);
+nav a:hover {
+  color: #d46a6a;
+  transform: scale(1.1);
 }
 
-nav ul li a:hover::after {
-  width: 100%;
-}
-
-/* ===== HERO ===== */
 .hero {
   text-align: center;
-  padding: 5rem 2rem;
-  position: relative;
+  margin: auto;
+  padding: 60px 20px;
 }
 
 .hero h1 {
-  font-size: 3rem;
-  color: var(--color-dark);
-}
-
-.hero h1 .accent {
-  color: var(--color-accent);
-  font-family: 'Sacramento', cursive;
-  font-size: 3.5rem;
+  font-size: 2.5rem;
+  color: #b3546a;
+  margin-bottom: 10px;
 }
 
 .hero p {
-  margin: 1rem 0 2rem;
   font-size: 1.2rem;
+  margin-bottom: 25px;
+}
+
+.cta {
+  display: inline-block;
+  padding: 12px 30px;
+  background: #ff9a9e;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(255, 154, 158, 0.3);
+  transition: all 0.3s ease;
+}
+
+.cta:hover {
+  background: #ff758c;
+  transform: translateY(-3px) scale(1.05);
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+}
+
+.language-switcher a {
+  text-decoration: none;
+  margin: 0 5px;
   color: #444;
 }
 
-.cta-button {
-  padding: 0.9rem 2.2rem;
-  border: none;
-  border-radius: 50px;
-  background: linear-gradient(45deg, var(--color-accent), var(--color-accent-2));
-  color: var(--color-light);
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 6px 15px rgba(255, 133, 192, 0.4);
+.language-switcher a:hover {
+  color: #d46a6a;
 }
 
-.cta-button:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 10px 20px rgba(179, 127, 235, 0.5);
-}
-
-/* ===== LANGUAGE SELECTOR ===== */
-#langSelect {
-  margin-left: 1rem;
-  padding: 0.5rem 1rem;
-  border-radius: 12px;
-  border: 1px solid #ddd;
-  background: var(--glass);
-  backdrop-filter: blur(10px);
-  font-weight: bold;
-  transition: 0.3s ease;
-}
-
-#langSelect:hover {
-  border-color: var(--color-accent);
-  color: var(--color-accent);
-}
-
-/* ===== FOOTER ===== */
-footer {
-  text-align: center;
-  padding: 2rem;
-  margin-top: 3rem;
-  background: var(--glass);
-  backdrop-filter: blur(10px);
-  border-radius: 20px 20px 0 0;
-  font-size: 0.9rem;
-  color: #555;
-  box-shadow: 0 -4px 12px rgba(0,0,0,0.05);
-}
-
-/* ===== ANIMASI BUBBLES GEMES ===== */
-.hero::before,
-.hero::after {
-  content: '';
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(255,133,192,0.25);
-  animation: float 8s ease-in-out infinite;
-  z-index: -1;
-}
-
-.hero::before {
-  width: 200px;
-  height: 200px;
-  left: -60px;
-  top: 25%;
-}
-
-.hero::after {
-  width: 130px;
-  height: 130px;
-  right: -50px;
-  bottom: 20%;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0) }
-  50% { transform: translateY(-25px) }
-}
-
-/* Sparkle Effect */
-.sparkle {
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  background: var(--color-accent-2);
-  border-radius: 50%;
-  animation: sparkle 4s linear infinite;
-}
-
-@keyframes sparkle {
-  0% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(0.3); opacity: 0.4; }
-  100% { transform: scale(1); opacity: 1; }
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
