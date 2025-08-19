@@ -2,71 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DX Atelier ✦ Portfolio</title>
-  <!-- Styles will be provided in assets/style.css next -->
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Sacramento&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DX Atelier</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Decorative animated background (CSS only; styles in style.css) -->
-  <div class="bg-anim" aria-hidden="true">
-    <span class="bubble"></span>
-    <span class="bubble"></span>
-    <span class="bubble"></span>
-    <span class="bubble"></span>
-    <span class="bubble"></span>
-  </div>
-
-  <!-- Header / Navbar -->
-  <header class="site-header">
-    <a href="index.html" class="brand" aria-label="DX Atelier Home">
-      <span class="logo">Δ</span>
-      <span class="brand-text">DX Atelier</span>
-    </a>
-
-    <nav class="nav" aria-label="Primary">
-      <a href="about.html" data-i18n="nav.about">About</a>
-      <a href="portfolio.html" data-i18n="nav.portfolio">Portfolio</a>
-      <a href="library.html" data-i18n="nav.library">Library</a>
-      <a href="game.html" data-i18n="nav.game">Game</a>
-      <a href="contact.html" data-i18n="nav.contact">Contact</a>
-      <a href="social.html" data-i18n="nav.social">Social Media</a>
+  <header>
+    <div class="logo">Δ DX Atelier</div>
+    <nav>
+      <a href="about.html">About</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="library.html">Library</a>
+      <a href="game.html">Game</a>
+      <a href="contact.html">Contact</a>
+      <a href="social.html">Social Media</a>
     </nav>
-
-    <!-- Language Switcher (persists via localStorage in script.js) -->
-    <div class="lang-switch" aria-label="Language switcher">
-      <button type="button" class="lang-btn" data-lang="id" aria-pressed="false">🇮🇩 ID</button>
-      <button type="button" class="lang-btn" data-lang="en" aria-pressed="true">🇬🇧 EN</button>
-      <button type="button" class="lang-btn" data-lang="fr" aria-pressed="false">🇫🇷 FR</button>
-    </div>
   </header>
 
-  <!-- Hero -->
-  <main>
-    <section class="hero" aria-labelledby="hero-title">
-      <h1 id="hero-title" data-i18n="hero.title">Welcome to DX Atelier</h1>
-      <p class="tagline" data-i18n="hero.tagline">Modern, girly & interactive portfolio of a Web Designer</p>
-      <a class="cta" href="booking.html" data-i18n="hero.cta">Book Me Now</a>
+  <section class="hero">
+    <h1>Welcome to DX Atelier</h1>
+    <p>Modern, girly & interactive portfolio of a Web Designer</p>
+    <a href="booking.html" class="cta">Book Me Now</a>
+  </section>
 
-      <!-- Cute inline sparkles created with CSS only -->
-      <div class="sparkles" aria-hidden="true">
-        <i></i><i></i><i></i><i></i><i></i>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <small>© 2025 DX Atelier Δ · <span data-i18n="footer.rights">All Rights Reserved</span></small>
+  <footer>
+    <p>© 2025 DX Atelier Δ | All Rights Reserved</p>
+    <div class="language-switcher">
+      <a href="?lang=id">Indonesia</a> |
+      <a href="?lang=en">English</a> |
+      <a href="?lang=fr">Français</a>
+    </div>
   </footer>
 
-  <!-- i18n + interactions will be added by script.js next -->
-  <noscript>
-    <p style="text-align:center;padding:1rem">Please enable JavaScript to use the language feature.</p>
-  </noscript>
-  <script src="script.js" defer></script>
+  <script src="script.js"></script>
 </body>
 </html>
