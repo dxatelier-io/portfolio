@@ -2,35 +2,35 @@ const translations = {
   en: {
     about: "About",
     contact: "Contact",
-    booking: "Booking",
     portfolio: "Portfolio",
     social: "Social Media",
     game: "Game",
     library: "Library",
     welcome: "Welcome to DX Atelier ✦",
-    tagline: "A playful & modern portfolio by Δ"
+    tagline: "A playful & modern portfolio by Δ",
+    booknow: "💖 Book Me Now 💖"
   },
   id: {
     about: "Tentang",
     contact: "Kontak",
-    booking: "Pesan",
     portfolio: "Portofolio",
     social: "Media Sosial",
     game: "Permainan",
     library: "Perpustakaan",
     welcome: "Selamat Datang di DX Atelier ✦",
-    tagline: "Portofolio modern & ceria oleh Δ"
+    tagline: "Portofolio modern & ceria oleh Δ",
+    booknow: "💖 Pesan Sekarang 💖"
   },
   fr: {
     about: "À propos",
     contact: "Contact",
-    booking: "Réservation",
     portfolio: "Portfolio",
     social: "Réseaux Sociaux",
     game: "Jeu",
     library: "Bibliothèque",
     welcome: "Bienvenue chez DX Atelier ✦",
-    tagline: "Un portfolio moderne et ludique par Δ"
+    tagline: "Un portfolio moderne et ludique par Δ",
+    booknow: "💖 Réservez Maintenant 💖"
   }
 };
 
