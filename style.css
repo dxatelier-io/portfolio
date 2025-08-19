@@ -1,182 +1,202 @@
 /* assets/style.css */
 
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Sacramento&display=swap');
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Sacramento&display=swap');
 
-/* Reset */
+/* Warna utama pastel */
+:root {
+  --bg-gradient: linear-gradient(135deg, #ffe6f0, #fceeff, #e6f7ff);
+  --color-accent: #ff85c0;
+  --color-accent-2: #b37feb;
+  --color-dark: #3d3d3d;
+  --color-light: #ffffff;
+  --glass: rgba(255, 255, 255, 0.5);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Body */
 body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #ffe4ec, #e4f0ff);
-  color: #333;
+  font-family: 'Quicksand', sans-serif;
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  color: var(--color-dark);
+  line-height: 1.6;
   overflow-x: hidden;
-  position: relative;
-  min-height: 100vh;
 }
 
-/* Header */
+/* ===== HEADER ===== */
 header {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(10px);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.2rem 3rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 1rem 2rem;
+  backdrop-filter: blur(12px);
+  background: var(--glass);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   position: sticky;
   top: 0;
   z-index: 1000;
+  border-radius: 0 0 20px 20px;
 }
 
-.logo {
+header .logo {
   font-family: 'Sacramento', cursive;
   font-size: 2.2rem;
-  color: #ff6fa8;
+  color: var(--color-accent);
   font-weight: bold;
 }
 
-/* Nav */
 nav ul {
   list-style: none;
   display: flex;
   gap: 2rem;
 }
 
-nav a {
+nav ul li a {
   text-decoration: none;
-  color: #444;
-  font-weight: 500;
+  color: var(--color-dark);
+  font-weight: 600;
   position: relative;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease;
 }
 
-nav a::after {
+nav ul li a::after {
   content: '';
   position: absolute;
-  width: 0%;
-  height: 2px;
   left: 0;
   bottom: -4px;
-  background: #ff6fa8;
-  transition: 0.3s;
+  width: 0;
+  height: 3px;
+  background: var(--color-accent);
+  transition: width 0.3s ease;
+  border-radius: 4px;
 }
 
-nav a:hover::after {
+nav ul li a:hover {
+  color: var(--color-accent);
+}
+
+nav ul li a:hover::after {
   width: 100%;
 }
 
-.language-selector {
-  padding: 0.4rem 0.6rem;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  background: #fff;
-  cursor: pointer;
-}
-
-/* Hero */
+/* ===== HERO ===== */
 .hero {
   text-align: center;
-  padding: 6rem 2rem;
+  padding: 5rem 2rem;
   position: relative;
-  z-index: 1;
 }
 
 .hero h1 {
-  font-size: 3.2rem;
-  color: #ff4081;
-  margin-bottom: 1rem;
+  font-size: 3rem;
+  color: var(--color-dark);
+}
+
+.hero h1 .accent {
+  color: var(--color-accent);
+  font-family: 'Sacramento', cursive;
+  font-size: 3.5rem;
 }
 
 .hero p {
+  margin: 1rem 0 2rem;
   font-size: 1.2rem;
-  color: #555;
-  margin-bottom: 2rem;
+  color: #444;
 }
 
-.cta-btn {
-  padding: 0.8rem 1.6rem;
-  background: #ff6fa8;
-  color: white;
-  border-radius: 25px;
+.cta-button {
+  padding: 0.9rem 2.2rem;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(45deg, var(--color-accent), var(--color-accent-2));
+  color: var(--color-light);
   font-weight: bold;
-  text-decoration: none;
-  box-shadow: 0 6px 12px rgba(255, 111, 168, 0.3);
-  transition: transform 0.3s;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(255, 133, 192, 0.4);
 }
 
-.cta-btn:hover {
-  transform: scale(1.05);
+.cta-button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(179, 127, 235, 0.5);
 }
 
-/* Footer */
+/* ===== LANGUAGE SELECTOR ===== */
+#langSelect {
+  margin-left: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+#langSelect:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+/* ===== FOOTER ===== */
 footer {
   text-align: center;
-  padding: 1.2rem;
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(6px);
+  padding: 2rem;
+  margin-top: 3rem;
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  border-radius: 20px 20px 0 0;
   font-size: 0.9rem;
-  color: #777;
-  margin-top: 4rem;
+  color: #555;
+  box-shadow: 0 -4px 12px rgba(0,0,0,0.05);
 }
 
-/* Animasi bubble background */
-@keyframes float {
-  0% { transform: translateY(0) scale(1); opacity: 0.7; }
-  50% { transform: translateY(-100px) scale(1.2); opacity: 0.9; }
-  100% { transform: translateY(-200px) scale(0.8); opacity: 0; }
-}
-
-.bubble {
+/* ===== ANIMASI BUBBLES GEMES ===== */
+.hero::before,
+.hero::after {
+  content: '';
   position: absolute;
-  bottom: -50px;
-  background: rgba(255, 182, 193, 0.6);
   border-radius: 50%;
-  animation: float 6s infinite;
+  background: rgba(255,133,192,0.25);
+  animation: float 8s ease-in-out infinite;
+  z-index: -1;
 }
 
-.bubble:nth-child(2) {
-  left: 25%;
-  width: 25px;
-  height: 25px;
-  animation-duration: 5s;
+.hero::before {
+  width: 200px;
+  height: 200px;
+  left: -60px;
+  top: 25%;
 }
 
-.bubble:nth-child(3) {
-  left: 50%;
-  width: 35px;
-  height: 35px;
-  animation-duration: 7s;
+.hero::after {
+  width: 130px;
+  height: 130px;
+  right: -50px;
+  bottom: 20%;
 }
 
-.bubble:nth-child(4) {
-  left: 75%;
-  width: 15px;
-  height: 15px;
-  animation-duration: 4s;
+@keyframes float {
+  0%, 100% { transform: translateY(0) }
+  50% { transform: translateY(-25px) }
 }
 
-/* Sparkles */
-@keyframes sparkle {
-  0% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.5); opacity: 0.5; }
-  100% { transform: scale(1); opacity: 1; }
-}
-
+/* Sparkle Effect */
 .sparkle {
   position: absolute;
-  width: 6px;
-  height: 6px;
-  background: #fffacd;
+  width: 8px;
+  height: 8px;
+  background: var(--color-accent-2);
   border-radius: 50%;
-  animation: sparkle 2s infinite;
+  animation: sparkle 4s linear infinite;
 }
 
-.sparkle:nth-child(5) { top: 20%; left: 30%; }
-.sparkle:nth-child(6) { top: 40%; left: 60%; animation-delay: 1s; }
-.sparkle:nth-child(7) { top: 70%; left: 20%; animation-delay: 1.5s; }
+@keyframes sparkle {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(0.3); opacity: 0.4; }
+  100% { transform: scale(1); opacity: 1; }
+}
