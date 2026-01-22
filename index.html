@@ -1,54 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DX Atelier ✦ Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DX Atelier — Future-ready Web & AI Studio</title>
+  <meta name="description" content="DX Atelier is a future-ready Web & AI studio crafting clean, intelligent, and high-performance digital experiences." />
+
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --panel: #10161d;
+      --text: #e6e9ef;
+      --muted: #9aa4b2;
+      --accent: #5ef1c5;
+      --accent-2: #6aa7ff;
+      --line: rgba(255,255,255,0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
+    }
+
+    body {
+      background: radial-gradient(1200px 600px at 10% -10%, rgba(94,241,197,0.08), transparent 40%),
+                  radial-gradient(800px 400px at 90% 10%, rgba(106,167,255,0.08), transparent 40%),
+                  var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* subtle animated grid */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: linear-gradient(var(--line) 1px, transparent 1px),
+                        linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(circle at center, rgba(0,0,0,0.6), transparent 70%);
+      animation: drift 40s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes drift {
+      from { background-position: 0 0, 0 0; }
+      to   { background-position: 600px 600px, 600px 600px; }
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 48px;
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(6px);
+    }
+
+    .logo {
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 32px;
+      font-size: 14px;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 1px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    main {
+      padding: 120px 48px 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 52px;
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 520px;
+      margin-bottom: 40px;
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 24px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--text);
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent 30%, rgba(94,241,197,0.15), rgba(106,167,255,0.15), transparent 70%);
+      transform: translateX(-100%);
+      transition: transform 0.6s ease;
+    }
+
+    .cta:hover::before {
+      transform: translateX(100%);
+    }
+
+    .visual {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 24px;
+      background: radial-gradient(circle at center, rgba(94,241,197,0.12), transparent 60%), var(--panel);
+      border: 1px solid var(--line);
+      overflow: hidden;
+    }
+
+    /* animated core */
+    .core {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 120px;
+      height: 120px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--accent), transparent 60%);
+      filter: blur(2px);
+      animation: pulse 4s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+      50% { transform: translate(-50%, -50%) scale(1.15); opacity: 1; }
+    }
+
+    .ring {
+      position: absolute;
+      inset: 20%;
+      border-radius: 50%;
+      border: 1px dashed var(--line);
+      animation: spin 20s linear infinite;
+    }
+
+    .ring:nth-child(2) {
+      inset: 30%;
+      animation-duration: 30s;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+
+    footer {
+      margin-top: 120px;
+      padding: 32px 48px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <!-- Animated background -->
-  <div class="background">
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-  </div>
 
-  <!-- Navbar -->
   <header>
-    <div class="logo">Δ DX Atelier</div>
+    <div class="logo">DX <span>Atelier</span></div>
     <nav>
-      <ul>
-        <li><a href="about.html" data-key="about">About</a></li>
-        <li><a href="contact.html" data-key="contact">Contact</a></li>
-        <li><a href="portfolio.html" data-key="portfolio">Portfolio</a></li>
-        <li><a href="social.html" data-key="social">Social Media</a></li>
-        <li><a href="game.html" data-key="game">Game</a></li>
-        <li><a href="library.html" data-key="library">Library</a></li>
-      </ul>
+      <a href="#">Home</a>
+      <a href="#">Services</a>
+      <a href="#">Works</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
     </nav>
-    <div class="lang-switch">
-      <select id="language">
-        <option value="en">English</option>
-        <option value="id">Indonesia</option>
-        <option value="fr">Français</option>
-      </select>
-    </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1 data-key="welcome">Welcome to DX Atelier ✦</h1>
-    <p data-key="tagline">A playful & modern portfolio by Δ</p>
-    <button class="cta" onclick="location.href='booking.html'" data-key="booknow">💖 Book Me Now 💖</button>
-  </section>
+  <main>
+    <section class="hero">
+      <div>
+        <h1>Designing <span>Future-Ready</span><br/>Web & AI Experiences</h1>
+        <p>
+          DX Atelier is a digital studio focused on clean architecture, intelligent systems, and interactive experiences.
+          I help ideas evolve into scalable products — powered by modern web technology and applied AI.
+        </p>
+        <a class="cta" href="#">Explore Capabilities →</a>
+      </div>
 
-  <!-- Footer -->
+      <div class="visual">
+        <div class="core"></div>
+        <div class="ring"></div>
+        <div class="ring"></div>
+      </div>
+    </section>
+  </main>
+
   <footer>
-    <p>© 2025 DX Atelier Δ | All Rights Reserved</p>
+    © dxatelier 2026 — Crafted with code, logic, and intention.
   </footer>
 
-  <script src="script.js"></script>
 </body>
 </html>
