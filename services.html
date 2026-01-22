@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services — DX Atelier</title>
+  <meta name="description" content="Premium Web & AI services by DX Atelier. Built with precision, logic, and long-term scalability." />
+
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --panel: #10161d;
+      --text: #e6e9ef;
+      --muted: #9aa4b2;
+      --accent: #5ef1c5;
+      --accent-2: #6aa7ff;
+      --line: rgba(255,255,255,0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
+    }
+
+    body {
+      background: radial-gradient(1000px 500px at 80% -10%, rgba(106,167,255,0.08), transparent 40%),
+                  var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: linear-gradient(var(--line) 1px, transparent 1px),
+                        linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-size: 80px 80px;
+      mask-image: radial-gradient(circle at center, rgba(0,0,0,0.7), transparent 70%);
+      pointer-events: none;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 48px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .logo { font-weight: 600; }
+    .logo span { color: var(--accent); }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 32px;
+      font-size: 14px;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 120px 48px 80px;
+    }
+
+    .intro {
+      max-width: 640px;
+      margin-bottom: 120px;
+    }
+
+    .intro h1 {
+      font-size: 48px;
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+
+    .intro h1 span {
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .intro p {
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent), var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 32px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.4s ease, border-color 0.4s ease;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 0% 0%, rgba(94,241,197,0.15), transparent 40%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(94,241,197,0.4);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card h3 {
+      font-size: 22px;
+      margin-bottom: 16px;
+    }
+
+    .card p {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .card ul {
+      list-style: none;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .card ul li {
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 16px;
+    }
+
+    .card ul li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    .cta {
+      margin-top: 120px;
+      padding: 48px;
+      border-radius: 32px;
+      background: radial-gradient(circle at center, rgba(94,241,197,0.12), transparent 60%), var(--panel);
+      border: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .cta h2 {
+      font-size: 32px;
+    }
+
+    .cta a {
+      padding: 14px 28px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      text-decoration: none;
+      color: var(--text);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta a::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent 30%, rgba(94,241,197,0.2), rgba(106,167,255,0.2), transparent 70%);
+      transform: translateX(-100%);
+      transition: transform 0.6s ease;
+    }
+
+    .cta a:hover::before {
+      transform: translateX(100%);
+    }
+
+    footer {
+      margin-top: 120px;
+      padding: 32px 48px;
+      border-top: 1px solid var(--line);
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 900px) {
+      .intro h1 { font-size: 38px; }
+      .cta { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">DX <span>Atelier</span></div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="#">Services</a>
+    <a href="#">Works</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section class="intro">
+    <h1>Services Built for <span>Serious Products</span></h1>
+    <p>
+      DX Atelier delivers high-end digital solutions for founders, teams, and individuals who value clarity,
+      performance, and long-term thinking. No shortcuts. No visual noise. Just systems that work.
+    </p>
+  </section>
+
+  <section class="services">
+    <div class="card">
+      <h3>Web Architecture & Development</h3>
+      <p>
+        Clean, scalable, and maintainable web systems designed for real-world growth.
+      </p>
+      <ul>
+        <li>Modern frontend & backend architecture</li>
+        <li>Performance-focused builds</li>
+        <li>Portfolio, product, and business websites</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Applied AI Solutions</h3>
+      <p>
+        Practical AI integrations that solve problems — not buzzwords or demos.
+      </p>
+      <ul>
+        <li>Custom AI workflows & automation</li>
+        <li>AI-powered content & data systems</li>
+        <li>Model integration & optimization</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Product & System Design</h3>
+      <p>
+        Thoughtful digital product design where logic drives aesthetics.
+      </p>
+      <ul>
+        <li>UX structure & interaction logic</li>
+        <li>Design systems & component thinking</li>
+        <li>Future-proof scalability planning</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Consultation & Technical Direction</h3>
+      <p>
+        Strategic guidance for projects that require clear technical decisions.
+      </p>
+      <ul>
+        <li>Project & stack evaluation</li>
+        <li>AI feasibility & roadmap planning</li>
+        <li>Technical mentorship</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Have a project worth building properly?</h2>
+    <a href="#">Start a Conversation →</a>
+  </section>
+</main>
+
+<footer>
+  © dxatelier 2026 — Precision over noise.
+</footer>
+
+</body>
+</html>
