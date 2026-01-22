@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — DX Atelier</title>
+  <meta name="description" content="Start a serious conversation with DX Atelier. Selective collaborations for thoughtful digital products." />
+
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --panel: #10161d;
+      --text: #e6e9ef;
+      --muted: #9aa4b2;
+      --accent: #5ef1c5;
+      --accent-2: #6aa7ff;
+      --line: rgba(255,255,255,0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
+    }
+
+    body {
+      background: radial-gradient(1200px 600px at 50% -10%, rgba(94,241,197,0.08), transparent 40%), var(--bg);
+      color: var(--text);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: linear-gradient(var(--line) 1px, transparent 1px),
+                        linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-size: 140px 140px;
+      mask-image: radial-gradient(circle at center, rgba(0,0,0,0.8), transparent 70%);
+      pointer-events: none;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 48px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .logo { font-weight: 600; }
+    .logo span { color: var(--accent); }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 32px;
+      font-size: 14px;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 120px 48px 80px;
+    }
+
+    .intro {
+      max-width: 720px;
+      margin-bottom: 96px;
+    }
+
+    .intro h1 {
+      font-size: 46px;
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+
+    .intro h1 span {
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .intro p {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    .form-wrapper {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent), var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 32px;
+      padding: 56px;
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    form .full {
+      grid-column: span 2;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--line);
+      padding: 12px 4px;
+      color: var(--text);
+      font-size: 15px;
+      outline: none;
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: var(--accent);
+    }
+
+    .hint {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    .submit {
+      margin-top: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .submit p {
+      font-size: 13px;
+      color: var(--muted);
+      max-width: 420px;
+    }
+
+    button {
+      padding: 14px 36px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--text);
+      font-size: 14px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    button::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent 30%, rgba(94,241,197,0.25), rgba(106,167,255,0.25), transparent 70%);
+      transform: translateX(-100%);
+      transition: transform 0.6s ease;
+    }
+
+    button:hover::before {
+      transform: translateX(100%);
+    }
+
+    footer {
+      margin-top: 120px;
+      padding: 32px 48px;
+      border-top: 1px solid var(--line);
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 900px) {
+      form { grid-template-columns: 1fr; }
+      form .full { grid-column: span 1; }
+      .intro h1 { font-size: 36px; }
+      .submit { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">DX <span>Atelier</span></div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="works.html">Works</a>
+    <a href="ai.html">AI Expertise</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section class="intro">
+    <h1>Let’s Discuss <span>Something Worth Building</span></h1>
+    <p>
+      This space is for serious inquiries only. If you value clarity, long-term thinking,
+      and systems built with intention, you are in the right place.
+    </p>
+  </section>
+
+  <section class="form-wrapper">
+    <form>
+      <div>
+        <label>Your Name</label>
+        <input type="text" placeholder="John Doe" />
+      </div>
+
+      <div>
+        <label>Email Address</label>
+        <input type="email" placeholder="you@email.com" />
+      </div>
+
+      <div>
+        <label>Project Type</label>
+        <select>
+          <option>Web Development</option>
+          <option>AI Integration</option>
+          <option>Consultation</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Timeline</label>
+        <input type="text" placeholder="e.g. 1–3 months" />
+      </div>
+
+      <div class="full">
+        <label>Tell me about the project</label>
+        <textarea placeholder="Context, goals, constraints, or anything relevant."></textarea>
+        <div class="hint">More context helps determine whether this collaboration is a good fit.</div>
+      </div>
+
+      <div class="full submit">
+        <p>
+          Submissions are reviewed selectively. If the project aligns, you will receive a response
+          with next steps.
+        </p>
+        <button type="submit">Send Inquiry →</button>
+      </div>
+    </form>
+  </section>
+</main>
+
+<footer>
+  © dxatelier 2026 — Selective by design.
+</footer>
+
+</body>
+</html>
